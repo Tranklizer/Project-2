@@ -1,0 +1,311 @@
+fileFormatVersion: 2
+guid: a47a12122f50a9d4aa39796ae7762e13
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: Head
+    100002: joint11
+    100004: joint11 1
+    100006: joint14
+    100008: joint14 1
+    100010: joint17
+    100012: joint17 1
+    100014: joint20
+    100016: joint20 1
+    100018: joint23
+    100020: joint32
+    100022: L_Elbow
+    100024: L_Index_Base
+    100026: L_Index_Mid
+    100028: L_Index_Tip
+    100030: L_Middle_Base
+    100032: L_Middle_Mid
+    100034: L_Middle_Tip
+    100036: L_Pinky_Base
+    100038: L_Pinky_Mid
+    100040: L_Pinky_Tip
+    100042: L_Shoulder
+    100044: L_Thumb_Base
+    100046: L_Thumb_Mid
+    100048: L_Thumb_Tip
+    100050: L_Wrist
+    100052: Neck
+    100054: R_Elbow
+    100056: R_Index_Base
+    100058: R_Index_Mid
+    100060: R_Index_Tip
+    100062: R_Middle_Base
+    100064: R_Middle_Mid
+    100066: R_Middle_Tip
+    100068: R_Pinky_Base
+    100070: R_Pinky_Mid
+    100072: R_Pinky_Tip
+    100074: R_Shoulder
+    100076: R_Thumb_Base
+    100078: R_Thumb_Mid
+    100080: R_Thumb_Tip
+    100082: R_Wrist
+    100084: //RootNode
+    100086: Spectral_Retopo_RetopoGroup1_RetopoGroup1:RetopoGroup1
+    100088: Spine_01
+    100090: Spine_02
+    100092: Spine_03
+    100094: Sternum
+    100096: Sternum_Control
+    100098: Tail_01
+    100100: Tail_02
+    100102: Tail_03
+    100104: Tail_04
+    100106: Tail_05
+    400000: Head
+    400002: joint11
+    400004: joint11 1
+    400006: joint14
+    400008: joint14 1
+    400010: joint17
+    400012: joint17 1
+    400014: joint20
+    400016: joint20 1
+    400018: joint23
+    400020: joint32
+    400022: L_Elbow
+    400024: L_Index_Base
+    400026: L_Index_Mid
+    400028: L_Index_Tip
+    400030: L_Middle_Base
+    400032: L_Middle_Mid
+    400034: L_Middle_Tip
+    400036: L_Pinky_Base
+    400038: L_Pinky_Mid
+    400040: L_Pinky_Tip
+    400042: L_Shoulder
+    400044: L_Thumb_Base
+    400046: L_Thumb_Mid
+    400048: L_Thumb_Tip
+    400050: L_Wrist
+    400052: Neck
+    400054: R_Elbow
+    400056: R_Index_Base
+    400058: R_Index_Mid
+    400060: R_Index_Tip
+    400062: R_Middle_Base
+    400064: R_Middle_Mid
+    400066: R_Middle_Tip
+    400068: R_Pinky_Base
+    400070: R_Pinky_Mid
+    400072: R_Pinky_Tip
+    400074: R_Shoulder
+    400076: R_Thumb_Base
+    400078: R_Thumb_Mid
+    400080: R_Thumb_Tip
+    400082: R_Wrist
+    400084: //RootNode
+    400086: Spectral_Retopo_RetopoGroup1_RetopoGroup1:RetopoGroup1
+    400088: Spine_01
+    400090: Spine_02
+    400092: Spine_03
+    400094: Sternum
+    400096: Sternum_Control
+    400098: Tail_01
+    400100: Tail_02
+    400102: Tail_03
+    400104: Tail_04
+    400106: Tail_05
+    2300000: Spectral_Retopo_RetopoGroup1_RetopoGroup1:RetopoGroup1
+    3300000: Spectral_Retopo_RetopoGroup1_RetopoGroup1:RetopoGroup1
+    4300000: Spectral_Retopo_RetopoGroup1_RetopoGroup1:RetopoGroup1
+    7400000: Charge
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Charge
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 15
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Spectral_Retopo_RetopoGroup1_RetopoGroup1:RetopoGroup1
+        weight: 1
+      - path: Sternum
+        weight: 1
+      - path: Sternum/L_Shoulder
+        weight: 1
+      - path: Sternum/L_Shoulder/L_Elbow
+        weight: 1
+      - path: Sternum/L_Shoulder/L_Elbow/L_Wrist
+        weight: 1
+      - path: Sternum/L_Shoulder/L_Elbow/L_Wrist/L_Index_Base
+        weight: 1
+      - path: Sternum/L_Shoulder/L_Elbow/L_Wrist/L_Index_Base/L_Index_Mid
+        weight: 1
+      - path: Sternum/L_Shoulder/L_Elbow/L_Wrist/L_Index_Base/L_Index_Mid/L_Index_Tip
+        weight: 1
+      - path: Sternum/L_Shoulder/L_Elbow/L_Wrist/L_Index_Base/L_Index_Mid/L_Index_Tip/joint17
+        weight: 1
+      - path: Sternum/L_Shoulder/L_Elbow/L_Wrist/L_Middle_Base
+        weight: 1
+      - path: Sternum/L_Shoulder/L_Elbow/L_Wrist/L_Middle_Base/L_Middle_Mid
+        weight: 1
+      - path: Sternum/L_Shoulder/L_Elbow/L_Wrist/L_Middle_Base/L_Middle_Mid/L_Middle_Tip
+        weight: 1
+      - path: Sternum/L_Shoulder/L_Elbow/L_Wrist/L_Middle_Base/L_Middle_Mid/L_Middle_Tip/joint14
+        weight: 1
+      - path: Sternum/L_Shoulder/L_Elbow/L_Wrist/L_Pinky_Base
+        weight: 1
+      - path: Sternum/L_Shoulder/L_Elbow/L_Wrist/L_Pinky_Base/L_Pinky_Mid
+        weight: 1
+      - path: Sternum/L_Shoulder/L_Elbow/L_Wrist/L_Pinky_Base/L_Pinky_Mid/L_Pinky_Tip
+        weight: 1
+      - path: Sternum/L_Shoulder/L_Elbow/L_Wrist/L_Pinky_Base/L_Pinky_Mid/L_Pinky_Tip/joint11
+        weight: 1
+      - path: Sternum/L_Shoulder/L_Elbow/L_Wrist/L_Thumb_Base
+        weight: 1
+      - path: Sternum/L_Shoulder/L_Elbow/L_Wrist/L_Thumb_Base/L_Thumb_Mid
+        weight: 1
+      - path: Sternum/L_Shoulder/L_Elbow/L_Wrist/L_Thumb_Base/L_Thumb_Mid/L_Thumb_Tip
+        weight: 1
+      - path: Sternum/L_Shoulder/L_Elbow/L_Wrist/L_Thumb_Base/L_Thumb_Mid/L_Thumb_Tip/joint20
+        weight: 1
+      - path: Sternum/Neck
+        weight: 1
+      - path: Sternum/Neck/Head
+        weight: 1
+      - path: Sternum/Neck/Head/joint23
+        weight: 1
+      - path: Sternum/R_Shoulder
+        weight: 1
+      - path: Sternum/R_Shoulder/R_Elbow
+        weight: 1
+      - path: Sternum/R_Shoulder/R_Elbow/R_Wrist
+        weight: 1
+      - path: Sternum/R_Shoulder/R_Elbow/R_Wrist/R_Index_Base
+        weight: 1
+      - path: Sternum/R_Shoulder/R_Elbow/R_Wrist/R_Index_Base/R_Index_Mid
+        weight: 1
+      - path: Sternum/R_Shoulder/R_Elbow/R_Wrist/R_Index_Base/R_Index_Mid/R_Index_Tip
+        weight: 1
+      - path: Sternum/R_Shoulder/R_Elbow/R_Wrist/R_Index_Base/R_Index_Mid/R_Index_Tip/joint17
+          1
+        weight: 1
+      - path: Sternum/R_Shoulder/R_Elbow/R_Wrist/R_Middle_Base
+        weight: 1
+      - path: Sternum/R_Shoulder/R_Elbow/R_Wrist/R_Middle_Base/R_Middle_Mid
+        weight: 1
+      - path: Sternum/R_Shoulder/R_Elbow/R_Wrist/R_Middle_Base/R_Middle_Mid/R_Middle_Tip
+        weight: 1
+      - path: Sternum/R_Shoulder/R_Elbow/R_Wrist/R_Middle_Base/R_Middle_Mid/R_Middle_Tip/joint14
+          1
+        weight: 1
+      - path: Sternum/R_Shoulder/R_Elbow/R_Wrist/R_Pinky_Base
+        weight: 1
+      - path: Sternum/R_Shoulder/R_Elbow/R_Wrist/R_Pinky_Base/R_Pinky_Mid
+        weight: 1
+      - path: Sternum/R_Shoulder/R_Elbow/R_Wrist/R_Pinky_Base/R_Pinky_Mid/R_Pinky_Tip
+        weight: 1
+      - path: Sternum/R_Shoulder/R_Elbow/R_Wrist/R_Pinky_Base/R_Pinky_Mid/R_Pinky_Tip/joint11
+          1
+        weight: 1
+      - path: Sternum/R_Shoulder/R_Elbow/R_Wrist/R_Thumb_Base
+        weight: 1
+      - path: Sternum/R_Shoulder/R_Elbow/R_Wrist/R_Thumb_Base/R_Thumb_Mid
+        weight: 1
+      - path: Sternum/R_Shoulder/R_Elbow/R_Wrist/R_Thumb_Base/R_Thumb_Mid/R_Thumb_Tip
+        weight: 1
+      - path: Sternum/R_Shoulder/R_Elbow/R_Wrist/R_Thumb_Base/R_Thumb_Mid/R_Thumb_Tip/joint20
+          1
+        weight: 1
+      - path: Sternum/Spine_01
+        weight: 1
+      - path: Sternum/Spine_01/Spine_02
+        weight: 1
+      - path: Sternum/Spine_01/Spine_02/Spine_03
+        weight: 1
+      - path: Sternum/Spine_01/Spine_02/Spine_03/Tail_01
+        weight: 1
+      - path: Sternum/Spine_01/Spine_02/Spine_03/Tail_01/Tail_02
+        weight: 1
+      - path: Sternum/Spine_01/Spine_02/Spine_03/Tail_01/Tail_02/Tail_03
+        weight: 1
+      - path: Sternum/Spine_01/Spine_02/Spine_03/Tail_01/Tail_02/Tail_03/Tail_04
+        weight: 1
+      - path: Sternum/Spine_01/Spine_02/Spine_03/Tail_01/Tail_02/Tail_03/Tail_04/Tail_05
+        weight: 1
+      - path: Sternum/Spine_01/Spine_02/Spine_03/Tail_01/Tail_02/Tail_03/Tail_04/Tail_05/joint32
+        weight: 1
+      - path: Sternum_Control
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 1
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: eeefd00d71903f048804ce28ef1de546,
+    type: 3}
+  animationType: 2
+  additionalBone: 0
+  userData: 
