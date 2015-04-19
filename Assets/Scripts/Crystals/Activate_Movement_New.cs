@@ -13,6 +13,8 @@ public class Activate_Movement_New : MonoBehaviour {
 	float rigidDelay = 0f;
 	public GameObject particles;
 
+	public GameObject explosionPosition;
+
 	// Use this for initialization
 	void Start () {
 
@@ -86,7 +88,7 @@ public class Activate_Movement_New : MonoBehaviour {
 				foreach (GameObject rigid in RigidBodies) 
 				{
 					rigid.rigidbody.isKinematic = false;
-					rigid.rigidbody.AddExplosionForce(20,transform.position,4);
+					rigid.rigidbody.AddExplosionForce(100,explosionPosition.transform.position,4);
 				}
 			}
 		}
