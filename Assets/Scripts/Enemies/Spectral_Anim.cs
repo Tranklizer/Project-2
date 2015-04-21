@@ -109,4 +109,9 @@ public class Spectral_Anim : MonoBehaviour {
 			state = 0;
 		}
 	}
+
+	void OnTriggerEnter(Collider other)
+	{
+
+	}
 }

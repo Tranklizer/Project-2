@@ -11,6 +11,9 @@ public class Dust_Tester : MonoBehaviour {
 
 	bool hasDust = false;
 
+	float opacity = 0.0f;
+	bool maxDust = false;
+
 	public Change_Vision cameraSettings;
 
 	// Use this for initialization
@@ -34,7 +37,30 @@ public class Dust_Tester : MonoBehaviour {
 
 		if(hasDust && cameraSettings.normalVision)
 		{
+			//Make the dust fade in and out
+			if(!maxDust)
+			{
+				opacity += Time.deltaTime;
+				if (opacity >= 1.0f)
+				{
+					maxDust = true;
+				}
+			}
+			else
+			{
+				opacity -= (Time.deltaTime / 10);
+			}
 			renderer.material.mainTexture = dust;
+			renderer.material.color = new Color(1,1,1,opacity);
+
+
+			if (opacity < 0.0f)
+			{
+				opacity = 0.0f;
+				hasDust = false;
+				maxDust = false;
+			}
+
 		}
 		else if (cameraSettings.normalVision && !hasDust)
 		{
@@ -48,6 +74,7 @@ public class Dust_Tester : MonoBehaviour {
 		{
 			hasDust = true;
 			renderer.material.mainTexture = dust;
+			renderer.material.color = new Color(1,1,1,0);
 		}
 	}
 	
