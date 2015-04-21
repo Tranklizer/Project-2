@@ -1619,6 +1619,10 @@ Prefab:
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: ee850421017be544b867825501cae017, type: 2}
+      propertyPath: movespeed
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ee850421017be544b867825501cae017, type: 2}
   m_RootGameObject: {fileID: 1033148307}
@@ -6097,7 +6101,6 @@ MonoBehaviour:
   animationIndex: 0
   delayTimer: 0
   particles: {fileID: 100000, guid: 8e3a7b1424608174da67e21db3f6742e, type: 2}
-  explosionPosition: {fileID: 0}
 --- !u!65 &597062825
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10963,6 +10966,8 @@ MonoBehaviour:
   playerCamera: {fileID: 0}
   rb: {fileID: 0}
   touchingGround: 1
+  isSprinting: 0
+  movespeed: 3
 --- !u!54 &1033148310
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -13642,7 +13647,6 @@ MonoBehaviour:
   animationIndex: 0
   delayTimer: 0
   particles: {fileID: 100000, guid: 8e3a7b1424608174da67e21db3f6742e, type: 2}
-  explosionPosition: {fileID: 0}
 --- !u!65 &1304301860
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15187,7 +15191,6 @@ MonoBehaviour:
   animationIndex: 0
   delayTimer: 0
   particles: {fileID: 100000, guid: 8e3a7b1424608174da67e21db3f6742e, type: 2}
-  explosionPosition: {fileID: 1987935062}
 --- !u!65 &1468475422
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -21826,7 +21829,6 @@ MonoBehaviour:
   animationIndex: 0
   delayTimer: 0
   particles: {fileID: 100000, guid: 8e3a7b1424608174da67e21db3f6742e, type: 2}
-  explosionPosition: {fileID: 0}
 --- !u!65 &2044805676
 BoxCollider:
   m_ObjectHideFlags: 0

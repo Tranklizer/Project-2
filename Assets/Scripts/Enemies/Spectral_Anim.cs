@@ -6,7 +6,6 @@ public class Spectral_Anim : MonoBehaviour {
 	public Transform[] wanderPoints = new Transform[12];
 	public int currentWanderPoint = 0;
 	Transform target;
-
 	public GameObject RayCastPoint;
 
 	public float moveSpeed;
@@ -58,7 +57,7 @@ public class Spectral_Anim : MonoBehaviour {
 			if (Vector3.Distance (transform.position, target.position) <= 3) 
 			{
 				currentWanderPoint ++; //cycle through the wander point
-				if (currentWanderPoint >= wanderPoints.Length) 
+				if (currentWanderPoint >= wanderPoints.Length)  
 				{
 					currentWanderPoint = 0;
 				}
