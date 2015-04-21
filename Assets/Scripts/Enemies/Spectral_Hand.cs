@@ -13,7 +13,7 @@ public class Spectral_Hand : MonoBehaviour {
 
 	void Update()
 	{
-		if (Vector3.Distance (transform.position, player.transform.position) <= 2 &&
+		if (Vector3.Distance (transform.position, player.transform.position) <= 3 &&
 			animState.GetCurrentAnimatorStateInfo (0).IsName ("Left_Swipe"))
 		{
 			Application.LoadLevel("Game_Over");

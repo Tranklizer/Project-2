@@ -7,6 +7,8 @@ public class Spectral_Anim : MonoBehaviour {
 	public int currentWanderPoint = 0;
 	Transform target;
 
+	public GameObject RayCastPoint;
+
 	public float moveSpeed;
 	public float turnSpeed;
 
@@ -39,7 +41,7 @@ public class Spectral_Anim : MonoBehaviour {
 			moveSpeed = 3;
 			turnSpeed = 1;
 
-			RaycastHit hit;
+			/*RaycastHit hit;
 			Ray sight = new Ray(transform.position, forward);
 
 			if(Physics.Raycast(sight, out hit, 23.0f))
@@ -50,13 +52,13 @@ public class Spectral_Anim : MonoBehaviour {
 					anim.SetTrigger("SeePlayer");
 					attackTimer = 0.0f;
 				}
-			}
+			}*/
 
 			// Switch the target patrol point if the Spectral gets too close
 			if (Vector3.Distance (transform.position, target.position) <= 3) 
 			{
 				currentWanderPoint ++; //cycle through the wander point
-				if (currentWanderPoint >= 12) 
+				if (currentWanderPoint >= wanderPoints.Length) 
 				{
 					currentWanderPoint = 0;
 				}
@@ -112,6 +114,22 @@ public class Spectral_Anim : MonoBehaviour {
 
 	void OnTriggerEnter(Collider other)
 	{
-
+		if (other.gameObject.tag == "Player") 
+		{
+			Vector3 relativePos = other.gameObject.transform.position - RayCastPoint.transform.position;
+			RaycastHit hit;
+			if(Physics.Raycast(RayCastPoint.transform.position, relativePos, out hit))
+			{
+				Debug.Log("Saw something");
+				Debug.Log(hit.collider.tag);
+				if(hit.collider.tag == "Player")
+				{
+					Debug.Log("Saw the player");
+					state = 1;
+					anim.SetTrigger("SeePlayer");
+					attackTimer = 0.0f;
+				}
+			}
+		}
 	}
 }
