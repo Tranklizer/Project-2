@@ -6,7 +6,10 @@ public class MultiCrystal : MonoBehaviour {
 	public GameObject[] Crystals = new GameObject[3];
 	public Activate_Movement_New[] crystalActivations = new Activate_Movement_New[3];
 	public GameObject[] Animations = new GameObject[1];
+	public GameObject[] Rigids = new GameObject[9];
 	bool allActive;
+
+	public GameObject explosionPosition;
 
 	// Use this for initialization
 	void Start () {
@@ -22,12 +25,17 @@ public class MultiCrystal : MonoBehaviour {
 
 			animator.GetComponent<Animator>().enabled = false;
 		}
+
+		foreach (GameObject rigid in Rigids) 
+		{
+			rigid.rigidbody.isKinematic = true;
+		}
 	
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		for (int i = 0; i < 3; i++) 
+		for (int i = 0; i < Crystals.Length; i++) 
 		{
 			if (crystalActivations[i].activated == true)
 			{
@@ -42,9 +50,21 @@ public class MultiCrystal : MonoBehaviour {
 
 		if (allActive) 
 		{
-			foreach (GameObject animator in Animations)
+			if(Animations.Length > 0)
 			{
-				animator.GetComponent<Animator>().enabled = true;
+				foreach (GameObject animator in Animations)
+				{
+					animator.GetComponent<Animator>().enabled = true;
+				}
+			}
+
+			if(Rigids.Length > 0)
+			{
+				foreach(GameObject rigid in Rigids)
+				{
+					rigid.rigidbody.isKinematic = false;
+					rigid.rigidbody.AddExplosionForce(100,explosionPosition.transform.position, 4);
+				}
 			}
 		}
 	

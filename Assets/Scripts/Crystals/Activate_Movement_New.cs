@@ -51,11 +51,11 @@ public class Activate_Movement_New : MonoBehaviour {
 			
 		}
 
-		if (activated && rigidDelay <= 2.0f) 
+		if (activated && rigidDelay <= 2.0f && activateRigid) 
 		{
 			rigidDelay += Time.deltaTime;
 		}
-		if (rigidDelay > 2.0f) 
+		if (rigidDelay > 2.0f && activateRigid) 
 		{
 			rigidDelay += Time.deltaTime;
 			foreach(GameObject rigid in RigidBodies)
@@ -63,7 +63,7 @@ public class Activate_Movement_New : MonoBehaviour {
 				rigid.GetComponent<BoxCollider>().enabled = false;
 			}
 		}
-		if (rigidDelay > 4.0f) 
+		if (rigidDelay > 4.0f && activateRigid) 
 		{
 			foreach(GameObject rigid in RigidBodies)
 			{
