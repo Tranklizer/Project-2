@@ -8,7 +8,8 @@ TagManager:
   - Building
   - Debris
   - Spectral_Hand
-  - Spectral
+  - RedSpectral
+  - BlueSpectral
   - 
   Builtin Layer 0: Default
   Builtin Layer 1: TransparentFX
@@ -21,7 +22,7 @@ TagManager:
   User Layer 8: Normal Vision
   User Layer 9: Spectral Vision
   User Layer 10: Omni_Vision
-  User Layer 11: 
+  User Layer 11: Blue Vision
   User Layer 12: 
   User Layer 13: 
   User Layer 14: 

@@ -71,7 +71,7 @@ public class Spectral_Anim : MonoBehaviour {
 			moveSpeed = 1;
 		}
 
-		else if (state == 1)
+		else if (state == 1 && anim.GetCurrentAnimatorStateInfo(0).IsName("Charge"))
 		{
 			target = player.transform;
 			moveSpeed = 8;
@@ -121,6 +121,7 @@ public class Spectral_Anim : MonoBehaviour {
 			{
 				Debug.Log("Saw something");
 				Debug.Log(hit.collider.tag);
+				Debug.Log(hit.collider.gameObject.name);
 				if(hit.collider.tag == "Player")
 				{
 					Debug.Log("Saw the player");

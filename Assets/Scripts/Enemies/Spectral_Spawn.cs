@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Spectral_Spawn : MonoBehaviour {
 
-	public GameObject Spectral;
+	public GameObject[] Spectrals;
 	public GameObject Q;
 	public Alpha_Animate QScript;
 	bool activated = false;
@@ -11,7 +11,11 @@ public class Spectral_Spawn : MonoBehaviour {
 	// Use this for initialization
 	void Start () 
 	{
-		Spectral.SetActive (false);
+		foreach (GameObject spectral in Spectrals) 
+		{
+			spectral.SetActive (false);
+		}
+
 		QScript = Q.GetComponent<Alpha_Animate> ();
 	}
 	
@@ -25,7 +29,10 @@ public class Spectral_Spawn : MonoBehaviour {
 		if (other.gameObject.tag == "Player" && activated == false) 
 		{
 			activated = true;
-			Spectral.SetActive(true);
+			foreach (GameObject spectral in Spectrals) 
+			{
+				spectral.SetActive (true);
+			}
 			QScript.isActive = true;
 			QScript.opacity = 1.0f;
 			QScript.delay = 0.0f;

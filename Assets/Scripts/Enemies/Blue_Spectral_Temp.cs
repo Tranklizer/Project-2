@@ -13,13 +13,17 @@ public class Blue_Spectral_Temp : MonoBehaviour {
 	public int state = 0; //0 = wandering, 1 = attacking
 	
 	float attackTimer;
+	float turnTimer;
 	
 
 	public GameObject player;
+	public GameObject E;
+	public Alpha_Animate EScript;
 	
 	// Use this for initialization
 	void Start () {
 		target = wanderPoints [currentWanderPoint];
+		EScript = E.GetComponent<Alpha_Animate> ();
 	}
 	
 	// Update is called once per frame
@@ -31,7 +35,7 @@ public class Blue_Spectral_Temp : MonoBehaviour {
 		
 		Vector3 forward = transform.TransformDirection(Vector3.forward);
 		
-		if (state == 0)
+		if (state == 0) // Wandering
 		{
 			target = wanderPoints[currentWanderPoint];
 			
@@ -63,10 +67,23 @@ public class Blue_Spectral_Temp : MonoBehaviour {
 			}
 		}
 		
-		else if (state == 1)
+		else if (state == 1) // turning to player
 		{
 			target = player.transform;
-			moveSpeed = 7;
+			moveSpeed = 1;
+			turnSpeed = 2;
+			turnTimer += Time.deltaTime;
+			if(turnTimer >= 1.0f)
+			{
+				state = 2;
+				turnTimer = 0.0f;
+			}
+		}
+
+		else if (state == 2) //Attacking Player
+		{
+			target = player.transform;
+			moveSpeed = 8;
 			turnSpeed = 2;
 			attackTimer += Time.deltaTime;
 			if (attackTimer > 3.0f)
@@ -76,7 +93,18 @@ public class Blue_Spectral_Temp : MonoBehaviour {
 			}
 		}
 
-		else if (state = 2) //Attacking Spectral
+		else if (state == 3) //turning to Red Spectral
+		{
+			moveSpeed = 1;
+			turnSpeed = 2;
+			turnTimer += Time.deltaTime;
+			if(turnTimer >= 1.3f)
+			{
+				state = 4;
+			}
+		}
+
+		else if (state == 4) //Attacking Red Spectral
 		{
 			moveSpeed = 7;
 			turnSpeed = 2;
@@ -107,6 +135,11 @@ public class Blue_Spectral_Temp : MonoBehaviour {
 		else if (other.gameObject.tag == "RedSpectral")
 		{
 			Destroy(other.gameObject);
+			EScript.isActive = true;
+			EScript.opacity = 1.0f;
+			EScript.delay = 0.0f;
+			target = wanderPoints[currentWanderPoint];
+			state = 0;
 		}
 	}
 	
@@ -119,8 +152,9 @@ public class Blue_Spectral_Temp : MonoBehaviour {
 
 		else if(other.gameObject.tag == "RedSpectral")
 		{
-			state = 2;
+			state = 3;
 			target = other.gameObject.transform;
+
 		}
 	}
 }
