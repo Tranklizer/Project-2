@@ -11,6 +11,7 @@ public class Blue_Spectral_Temp : MonoBehaviour {
 	public float turnSpeed;
 	
 	public int state = 0; //0 = wandering, 1 = attacking
+	public Animator animator;
 	
 	float attackTimer;
 	float turnTimer;
@@ -24,6 +25,7 @@ public class Blue_Spectral_Temp : MonoBehaviour {
 	void Start () {
 		target = wanderPoints [currentWanderPoint];
 		EScript = E.GetComponent<Alpha_Animate> ();
+		animator = this.gameObject.GetComponent<Animator> ();
 	}
 	
 	// Update is called once per frame
@@ -67,20 +69,20 @@ public class Blue_Spectral_Temp : MonoBehaviour {
 			}
 		}
 		
-		else if (state == 1) // turning to player
+		else if (state == 1 && animator.GetCurrentAnimatorStateInfo(0).IsName("Spot_Target")) // turning to player
 		{
 			target = player.transform;
-			moveSpeed = 1;
+			moveSpeed = 0;
 			turnSpeed = 2;
-			turnTimer += Time.deltaTime;
+			/*turnTimer += Time.deltaTime;
 			if(turnTimer >= 1.0f)
 			{
 				state = 2;
 				turnTimer = 0.0f;
-			}
+			}*/
 		}
 
-		else if (state == 2) //Attacking Player
+		else if (state == 1 && animator.GetCurrentAnimatorStateInfo(0).IsName("Charge")) //Attacking Player
 		{
 			target = player.transform;
 			moveSpeed = 8;
@@ -89,22 +91,35 @@ public class Blue_Spectral_Temp : MonoBehaviour {
 			if (attackTimer > 3.0f)
 			{
 				state = 0;
+				animator.SetTrigger("HitObstacle");
 				target = wanderPoints[currentWanderPoint];
+			}
+			if(Vector3.Distance(transform.position, target.position) < 5)
+			{
+				animator.SetTrigger("AttackTarget");
 			}
 		}
 
-		else if (state == 3) //turning to Red Spectral
+		else if (state == 1 && animator.GetCurrentAnimatorStateInfo(0).IsName("Attack_P2"))
 		{
-			moveSpeed = 1;
+			target = player.transform;
+			moveSpeed = 0;
 			turnSpeed = 2;
-			turnTimer += Time.deltaTime;
+		}
+
+
+		else if (state == 3 && animator.GetCurrentAnimatorStateInfo(0).IsName("Spot_Target")) //turning to Red Spectral
+		{
+			moveSpeed = 0;
+			turnSpeed = 2;
+			/*turnTimer += Time.deltaTime;
 			if(turnTimer >= 1.3f)
 			{
 				state = 4;
-			}
+			}*/
 		}
 
-		else if (state == 4) //Attacking Red Spectral
+		else if (state == 3 && animator.GetCurrentAnimatorStateInfo(0).IsName("Charge")) //Attacking Red Spectral
 		{
 			moveSpeed = 7;
 			turnSpeed = 2;
@@ -112,8 +127,19 @@ public class Blue_Spectral_Temp : MonoBehaviour {
 			if (attackTimer > 3.0f)
 			{
 				state = 0;
+				animator.SetTrigger("HitObstacle");
 				target = wanderPoints[currentWanderPoint];
 			}
+			if(Vector3.Distance(transform.position, target.position) < 5)
+			{
+				Debug.Log("Close to target");
+				animator.SetTrigger("AttackTarget");
+			}
+		}
+		else if (state == 3 && animator.GetCurrentAnimatorStateInfo(0).IsName("Attack_P2"))
+		{
+			moveSpeed = 0;
+			turnSpeed = 2;
 		}
 
 		
@@ -145,13 +171,15 @@ public class Blue_Spectral_Temp : MonoBehaviour {
 	
 	void OnTriggerEnter(Collider other)
 	{
-		if (other.gameObject.tag == "Player") 
+		if (other.gameObject.tag == "Player" && (state != 1 || state != 3)) 
 		{
+			animator.SetTrigger("SeeTarget");
 			state = 1;
 		}
 
-		else if(other.gameObject.tag == "RedSpectral")
+		else if(other.gameObject.tag == "RedSpectral" && (state != 3 || state != 1))
 		{
+			animator.SetTrigger("SeeTarget");
 			state = 3;
 			target = other.gameObject.transform;
 

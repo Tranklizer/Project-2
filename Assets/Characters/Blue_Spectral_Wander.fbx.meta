@@ -1,0 +1,242 @@
+fileFormatVersion: 2
+guid: 57f8c6e360ba97b4397b399f1bc8aab6
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: Back_Limbs
+    100002: Blue_Spectral_Mesh
+    100004: //RootNode
+    100006: Head
+    100008: joint13
+    100010: joint16
+    100012: joint16 1
+    100014: joint19
+    100016: joint21
+    100018: joint23
+    100020: joint23 1
+    100022: joint7
+    100024: joint7 1
+    100026: L_Back_Limb_Base
+    100028: L_Back_Limb_Claw
+    100030: L_Clavicle
+    100032: L_Claw
+    100034: L_Elbow
+    100036: L_JawBone
+    100038: L_Shoulder
+    100040: L_Wrist
+    100042: Lower_Jaw
+    100044: LowerBack_Limb_Base
+    100046: LowerBack_Limb_Claw
+    100048: R_Back_Limb_Base
+    100050: R_Back_Limb_Claw
+    100052: R_Clavicle
+    100054: R_Claw
+    100056: R_Elbow
+    100058: R_JawBone
+    100060: R_Shoulder
+    100062: R_Wrist
+    100064: Spine_01
+    100066: Spine_01 1
+    100068: Sternum
+    100070: Sternum_Ctrl
+    100072: UpperBack_Limb_Base
+    100074: UpperBack_Limb_Claw
+    400000: Back_Limbs
+    400002: Blue_Spectral_Mesh
+    400004: //RootNode
+    400006: Head
+    400008: joint13
+    400010: joint16
+    400012: joint16 1
+    400014: joint19
+    400016: joint21
+    400018: joint23
+    400020: joint23 1
+    400022: joint7
+    400024: joint7 1
+    400026: L_Back_Limb_Base
+    400028: L_Back_Limb_Claw
+    400030: L_Clavicle
+    400032: L_Claw
+    400034: L_Elbow
+    400036: L_JawBone
+    400038: L_Shoulder
+    400040: L_Wrist
+    400042: Lower_Jaw
+    400044: LowerBack_Limb_Base
+    400046: LowerBack_Limb_Claw
+    400048: R_Back_Limb_Base
+    400050: R_Back_Limb_Claw
+    400052: R_Clavicle
+    400054: R_Claw
+    400056: R_Elbow
+    400058: R_JawBone
+    400060: R_Shoulder
+    400062: R_Wrist
+    400064: Spine_01
+    400066: Spine_01 1
+    400068: Sternum
+    400070: Sternum_Ctrl
+    400072: UpperBack_Limb_Base
+    400074: UpperBack_Limb_Claw
+    4300000: Blue_Spectral_Mesh
+    7400000: Blue_Wander
+    9500000: //RootNode
+    13700000: Blue_Spectral_Mesh
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Blue_Wander
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 48
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Blue_Spectral_Mesh
+        weight: 1
+      - path: Sternum
+        weight: 1
+      - path: Sternum/Head
+        weight: 1
+      - path: Sternum/Head/joint21
+        weight: 1
+      - path: Sternum/Head/Lower_Jaw
+        weight: 1
+      - path: Sternum/Head/Lower_Jaw/L_JawBone
+        weight: 1
+      - path: Sternum/Head/Lower_Jaw/L_JawBone/joint23
+        weight: 1
+      - path: Sternum/Head/Lower_Jaw/R_JawBone
+        weight: 1
+      - path: Sternum/Head/Lower_Jaw/R_JawBone/joint23 1
+        weight: 1
+      - path: Sternum/L_Clavicle
+        weight: 1
+      - path: Sternum/L_Clavicle/L_Shoulder
+        weight: 1
+      - path: Sternum/L_Clavicle/L_Shoulder/L_Elbow
+        weight: 1
+      - path: Sternum/L_Clavicle/L_Shoulder/L_Elbow/L_Wrist
+        weight: 1
+      - path: Sternum/L_Clavicle/L_Shoulder/L_Elbow/L_Wrist/L_Claw
+        weight: 1
+      - path: Sternum/L_Clavicle/L_Shoulder/L_Elbow/L_Wrist/L_Claw/joint7
+        weight: 1
+      - path: Sternum/R_Clavicle
+        weight: 1
+      - path: Sternum/R_Clavicle/R_Shoulder
+        weight: 1
+      - path: Sternum/R_Clavicle/R_Shoulder/R_Elbow
+        weight: 1
+      - path: Sternum/R_Clavicle/R_Shoulder/R_Elbow/R_Wrist
+        weight: 1
+      - path: Sternum/R_Clavicle/R_Shoulder/R_Elbow/R_Wrist/R_Claw
+        weight: 1
+      - path: Sternum/R_Clavicle/R_Shoulder/R_Elbow/R_Wrist/R_Claw/joint7 1
+        weight: 1
+      - path: Sternum/Spine_01
+        weight: 1
+      - path: Sternum/Spine_01/Spine_01 1
+        weight: 1
+      - path: Sternum/Spine_01/Spine_01 1/Back_Limbs
+        weight: 1
+      - path: Sternum/Spine_01/Spine_01 1/Back_Limbs/L_Back_Limb_Base
+        weight: 1
+      - path: Sternum/Spine_01/Spine_01 1/Back_Limbs/L_Back_Limb_Base/L_Back_Limb_Claw
+        weight: 1
+      - path: Sternum/Spine_01/Spine_01 1/Back_Limbs/L_Back_Limb_Base/L_Back_Limb_Claw/joint16
+        weight: 1
+      - path: Sternum/Spine_01/Spine_01 1/Back_Limbs/LowerBack_Limb_Base
+        weight: 1
+      - path: Sternum/Spine_01/Spine_01 1/Back_Limbs/LowerBack_Limb_Base/LowerBack_Limb_Claw
+        weight: 1
+      - path: Sternum/Spine_01/Spine_01 1/Back_Limbs/LowerBack_Limb_Base/LowerBack_Limb_Claw/joint19
+        weight: 1
+      - path: Sternum/Spine_01/Spine_01 1/Back_Limbs/R_Back_Limb_Base
+        weight: 1
+      - path: Sternum/Spine_01/Spine_01 1/Back_Limbs/R_Back_Limb_Base/R_Back_Limb_Claw
+        weight: 1
+      - path: Sternum/Spine_01/Spine_01 1/Back_Limbs/R_Back_Limb_Base/R_Back_Limb_Claw/joint16
+          1
+        weight: 1
+      - path: Sternum/Spine_01/Spine_01 1/Back_Limbs/UpperBack_Limb_Base
+        weight: 1
+      - path: Sternum/Spine_01/Spine_01 1/Back_Limbs/UpperBack_Limb_Base/UpperBack_Limb_Claw
+        weight: 1
+      - path: Sternum/Spine_01/Spine_01 1/Back_Limbs/UpperBack_Limb_Base/UpperBack_Limb_Claw/joint13
+        weight: 1
+      - path: Sternum_Ctrl
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
