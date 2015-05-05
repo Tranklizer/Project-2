@@ -69,11 +69,45 @@ public class Blue_Spectral_Temp : MonoBehaviour {
 			}
 		}
 		
-		else if (state == 1 && animator.GetCurrentAnimatorStateInfo(0).IsName("Spot_Target")) // turning to player
+		else if (state == 1) // attacking player
 		{
-			target = player.transform;
-			moveSpeed = 0;
-			turnSpeed = 2;
+			attackTimer += Time.deltaTime;
+
+			if (animator.GetCurrentAnimatorStateInfo(0).IsName("Spot_Target"))
+			{
+				target = player.transform;
+				moveSpeed = 0;
+				turnSpeed = 2;
+			}
+
+			else if (animator.GetCurrentAnimatorStateInfo(0).IsName("Charge"))
+			{
+				target = player.transform;
+				moveSpeed = 8;
+				turnSpeed = 2;
+				if(Vector3.Distance(transform.position, target.position) < 7)
+				{
+					animator.SetTrigger("AttackTarget");
+				}
+			}
+			else if (animator.GetCurrentAnimatorStateInfo(0).IsName("Attack"))
+			{
+				target = player.transform;
+				moveSpeed = 8;
+				turnSpeed = 2;
+			}
+
+			else if (animator.GetCurrentAnimatorStateInfo(0).IsName("Attack_P2"))
+			{
+				moveSpeed = 0;
+				turnSpeed = 1;
+			}
+
+			else if (animator.GetCurrentAnimatorStateInfo(0).IsName("Wander") && attackTimer >= 3.0f)
+			{
+				attackTimer = 0.0f;
+				state = 0; //Go back to wandering
+			}
 			/*turnTimer += Time.deltaTime;
 			if(turnTimer >= 1.0f)
 			{
@@ -82,64 +116,43 @@ public class Blue_Spectral_Temp : MonoBehaviour {
 			}*/
 		}
 
-		else if (state == 1 && animator.GetCurrentAnimatorStateInfo(0).IsName("Charge")) //Attacking Player
+
+		else if (state == 3)
 		{
-			target = player.transform;
-			moveSpeed = 8;
-			turnSpeed = 2;
 			attackTimer += Time.deltaTime;
-			if (attackTimer > 3.0f)
+
+			if(animator.GetCurrentAnimatorStateInfo(0).IsName("Spot_Target"))
 			{
+				moveSpeed= 1;
+				turnSpeed = 2;
+			}
+			else if (animator.GetCurrentAnimatorStateInfo(0).IsName("Charge"))
+			{
+				moveSpeed = 7;
+				turnSpeed = 2;
+				if(Vector3.Distance(transform.position, target.position) < 6)
+				{
+					animator.SetTrigger("AttackTarget");
+				}
+			}
+			else if (animator.GetCurrentAnimatorStateInfo(0).IsName("Attack"))
+			{
+				moveSpeed = 4;
+				turnSpeed = 2;
+			}
+
+			else if (animator.GetCurrentAnimatorStateInfo(0).IsName("Attack_P2"))
+			{
+				moveSpeed = 0;
+				turnSpeed = 1;
+			}
+			else if (animator.GetCurrentAnimatorStateInfo(0).IsName("Wander") && attackTimer > 3.0f)
+			{
+				Debug.Log("Reached wander state");
+				attackTimer = 0.0f;
 				state = 0;
-				animator.SetTrigger("HitObstacle");
 				target = wanderPoints[currentWanderPoint];
 			}
-			if(Vector3.Distance(transform.position, target.position) < 5)
-			{
-				animator.SetTrigger("AttackTarget");
-			}
-		}
-
-		else if (state == 1 && animator.GetCurrentAnimatorStateInfo(0).IsName("Attack_P2"))
-		{
-			target = player.transform;
-			moveSpeed = 0;
-			turnSpeed = 2;
-		}
-
-
-		else if (state == 3 && animator.GetCurrentAnimatorStateInfo(0).IsName("Spot_Target")) //turning to Red Spectral
-		{
-			moveSpeed = 0;
-			turnSpeed = 2;
-			/*turnTimer += Time.deltaTime;
-			if(turnTimer >= 1.3f)
-			{
-				state = 4;
-			}*/
-		}
-
-		else if (state == 3 && animator.GetCurrentAnimatorStateInfo(0).IsName("Charge")) //Attacking Red Spectral
-		{
-			moveSpeed = 7;
-			turnSpeed = 2;
-			attackTimer += Time.deltaTime;
-			if (attackTimer > 3.0f)
-			{
-				state = 0;
-				animator.SetTrigger("HitObstacle");
-				target = wanderPoints[currentWanderPoint];
-			}
-			if(Vector3.Distance(transform.position, target.position) < 5)
-			{
-				Debug.Log("Close to target");
-				animator.SetTrigger("AttackTarget");
-			}
-		}
-		else if (state == 3 && animator.GetCurrentAnimatorStateInfo(0).IsName("Attack_P2"))
-		{
-			moveSpeed = 0;
-			turnSpeed = 2;
 		}
 
 		
@@ -150,35 +163,40 @@ public class Blue_Spectral_Temp : MonoBehaviour {
 	{
 		if (other.gameObject.tag == "Player") 
 		{
-			Debug.Log("Player is Dead");
-			Application.LoadLevel("Game_Over");
+			other.gameObject.SendMessage("IncreaseHit");
 		}
 		else if (other.gameObject.tag == "Building")
 		{
+			if(animator.GetCurrentAnimatorStateInfo(0).IsName("Charge"))
+			{
+				animator.SetTrigger("HitObstacle");
+				state = 0;
+			}
+
 			state = 0;
 		}
 
 		else if (other.gameObject.tag == "RedSpectral")
 		{
-			Destroy(other.gameObject);
+			other.gameObject.SetActive(false);
 			EScript.isActive = true;
 			EScript.opacity = 1.0f;
 			EScript.delay = 0.0f;
-			target = wanderPoints[currentWanderPoint];
-			state = 0;
 		}
 	}
 	
 	void OnTriggerEnter(Collider other)
 	{
-		if (other.gameObject.tag == "Player" && (state != 1 || state != 3)) 
+		if (other.gameObject.tag == "Player" && state == 0) 
 		{
+			attackTimer = 0.0f;
 			animator.SetTrigger("SeeTarget");
 			state = 1;
 		}
 
-		else if(other.gameObject.tag == "RedSpectral" && (state != 3 || state != 1))
+		else if(other.gameObject.tag == "RedSpectral" && state == 0)
 		{
+			attackTimer = 0.0f;
 			animator.SetTrigger("SeeTarget");
 			state = 3;
 			target = other.gameObject.transform;

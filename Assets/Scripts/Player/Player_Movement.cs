@@ -5,6 +5,8 @@ public class Player_Movement : MonoBehaviour {
 
 	public Player_Info playerInfo;
 	public GameObject playerCamera;
+	public GameObject Blood;
+	public Alpha_Animate bloodAlpha;
 	
 	public Rigidbody rb;
 	
@@ -16,12 +18,15 @@ public class Player_Movement : MonoBehaviour {
 	
 	Vector3 currentPosition;
 	Vector3 velocity;
+
+	int hits = 0;
 	
 	// Use this for initialization
 	void Start () {
 		//Get the rigidbody component and the child camera
 		rb = GetComponent<Rigidbody> ();
 		playerInfo = GameObject.Find ("Player_Manager").GetComponent<Player_Info>();
+		bloodAlpha = Blood.GetComponent<Alpha_Animate> ();
 		playerCamera = GameObject.Find ("Main Camera");
 	}
 	
@@ -102,6 +107,18 @@ void FixedUpdate () {
 	currentPosition = new Vector3 (transform.position.x, transform.position.y, transform.position.z);
 	
 }
+
+	void IncreaseHit()
+	{
+		hits ++;
+		if (hits > 2) 
+		{
+			Application.LoadLevel("Game_Over");
+		}
+		bloodAlpha.isActive = true;
+		bloodAlpha.opacity = 1.0f;
+		bloodAlpha.delay = 0.0f;
+	}
 
 void OnCollisionStay(Collision other)
 {

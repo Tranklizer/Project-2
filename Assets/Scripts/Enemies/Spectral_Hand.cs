@@ -13,12 +13,29 @@ public class Spectral_Hand : MonoBehaviour {
 
 	void Update()
 	{
-		if (Vector3.Distance (transform.position, player.transform.position) <= 2 &&
-			animState.GetCurrentAnimatorStateInfo (0).IsName ("Left_Swipe"))
-		{
-			Application.LoadLevel("Game_Over");
-		}
 
+	}
+
+	void OnTriggerEnter(Collider other)
+	{
+		if(other.gameObject.tag == "Player")
+		{
+			if(transform.root.tag == "RedSpectral")
+			{
+				if(animState.GetCurrentAnimatorStateInfo(0).IsName("Left_Swipe"))
+				{
+					player.SendMessage("IncreaseHit");
+				}
+			}
+
+			else if (transform.root.tag == "BlueSpectral")
+			{
+				if(animState.GetCurrentAnimatorStateInfo(0).IsName("Attack") || animState.GetCurrentAnimatorStateInfo(0).IsName("Attack_P2"))
+				{
+					player.SendMessage("IncreaseHit");
+				}
+			}
+		}
 	}
 
 
