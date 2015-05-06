@@ -823,6 +823,7 @@ GameObject:
   - 114: {fileID: 11400000}
   - 136: {fileID: 13600000}
   - 65: {fileID: 6500000}
+  - 114: {fileID: 11400002}
   m_Layer: 9
   m_Name: Spectral_Update
   m_TagString: RedSpectral
@@ -1551,7 +1552,7 @@ BoxCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100108}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 6.30999994, y: 2.07999992, z: 9.97999954}
@@ -1594,7 +1595,6 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  - {fileID: 0}
   currentWanderPoint: 0
   RayCastPoint: {fileID: 100000}
   moveSpeed: 3
@@ -1602,6 +1602,21 @@ MonoBehaviour:
   state: 0
   anim: {fileID: 0}
   player: {fileID: 0}
+--- !u!114 &11400002
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100108}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74567d6a17c427b4794dd6b11e7bb13f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Spectral: {fileID: 100108}
+  respawnPoint: {fileID: 0}
+  targetPoints: {fileID: 0}
+  setPoints: {fileID: 0}
 --- !u!136 &13600000
 CapsuleCollider:
   m_ObjectHideFlags: 1

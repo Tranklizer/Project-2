@@ -117,7 +117,7 @@ public class Blue_Spectral_Temp : MonoBehaviour {
 		}
 
 
-		else if (state == 3)
+		else if (state == 3) //Attacking Spectral
 		{
 			attackTimer += Time.deltaTime;
 
@@ -128,7 +128,7 @@ public class Blue_Spectral_Temp : MonoBehaviour {
 			}
 			else if (animator.GetCurrentAnimatorStateInfo(0).IsName("Charge"))
 			{
-				moveSpeed = 7;
+				moveSpeed = 6;
 				turnSpeed = 2;
 				if(Vector3.Distance(transform.position, target.position) < 6)
 				{
@@ -178,7 +178,7 @@ public class Blue_Spectral_Temp : MonoBehaviour {
 
 		else if (other.gameObject.tag == "RedSpectral")
 		{
-			other.gameObject.SetActive(false);
+			other.gameObject.SendMessage("RespawnSpectral");
 			EScript.isActive = true;
 			EScript.opacity = 1.0f;
 			EScript.delay = 0.0f;
@@ -197,7 +197,7 @@ public class Blue_Spectral_Temp : MonoBehaviour {
 		else if(other.gameObject.tag == "RedSpectral" && state == 0)
 		{
 			attackTimer = 0.0f;
-			animator.SetTrigger("SeeTarget");
+			animator.SetTrigger("SeeSpectral");
 			state = 3;
 			target = other.gameObject.transform;
 
