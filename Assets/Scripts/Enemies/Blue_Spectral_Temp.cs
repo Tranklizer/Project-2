@@ -36,7 +36,8 @@ public class Blue_Spectral_Temp : MonoBehaviour {
 		transform.rotation = Quaternion.Slerp (transform.rotation, turnRotation, turnSpeed * Time.deltaTime);
 		
 		Vector3 forward = transform.TransformDirection(Vector3.forward);
-		
+	
+
 		if (state == 0) // Wandering
 		{
 			target = wanderPoints[currentWanderPoint];
@@ -196,10 +197,15 @@ public class Blue_Spectral_Temp : MonoBehaviour {
 
 		else if(other.gameObject.tag == "RedSpectral" && state == 0)
 		{
-			attackTimer = 0.0f;
-			animator.SetTrigger("SeeSpectral");
-			state = 3;
-			target = other.gameObject.transform;
+
+			if(Vector3.Distance(transform.position, other.gameObject.transform.position) <= 18.0f)
+			{
+				Debug.Log("BlueSpectral Saw Red Spectral");
+				attackTimer = 0.0f;
+				animator.SetTrigger("SeeSpectral");
+				state = 3;
+				target = other.gameObject.transform;
+			}
 
 		}
 	}

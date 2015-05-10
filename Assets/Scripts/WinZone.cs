@@ -13,8 +13,11 @@ public class WinZone : MonoBehaviour {
 	
 	}
 
-	void OnTriggerEnter()
+	void OnTriggerEnter(Collider other)
 	{
-		Application.LoadLevel ("Main_Menu");
+		if(other.gameObject.tag == "Player")
+		{
+			Application.LoadLevel ("Main_Menu");
+		}
 	}
 }
