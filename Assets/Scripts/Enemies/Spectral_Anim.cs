@@ -93,7 +93,7 @@ public class Spectral_Anim : MonoBehaviour {
 		if (anim.GetCurrentAnimatorStateInfo (0).IsName ("Left_Swipe")) 
 		{
 			turnSpeed = 0;
-			moveSpeed = 1;
+			moveSpeed = 2;
 		}
 	
 	}
